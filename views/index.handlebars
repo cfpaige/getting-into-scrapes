@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-12">
+        {{#each articles}}
+        <div class="card w-90">
+            <div class="card-header text-white bg-primary">
+                <a href={{link}} target="_blank" class="text-white">
+                    <h2>{{title}}</h2>
+                </a>
+            </div>
+            <div class="card-body">
+                <button id="{{_id}}" class="btn btn-primary save-btn">Save Article</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

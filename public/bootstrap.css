@@ -12,19 +12,19 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /* body { background-color: #F2F6D0 } */
-  
-li.nav-item .btn {
-margin: 3px 0 0 10px;
-}
 
 .jumbotron {
   height: 500px;
 }
 
-.background-image{
+.background-image {
   background-image: url("guardian-stack.jpg");  
 }
 
+.message {
+  text-align: center;
+  margin: 0 auto;
+}
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

@@ -24,18 +24,16 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" id="all-articles" href="/">Home
-							{{!-- <span class="sr-only">(current)</span> --}}
-						</a>
+						<button type="button" id="home-btn" class="btn btn-outline-success">HOME</button>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="saved-articles" href="/saved">Popular</a>
+						<button type="button" id="favs-btn" class="btn btn-outline-info">POPULAR</button>
 					</li>
 					<li class="nav-item">
-							<button type="button" id="scrape" class="btn btn-outline-info">SCRAPE NEW ARTICLES!</button>
+						<button type="button" id="scrape" class="btn btn-outline-warning">SCRAPE</button>
 					</li>
 					<li class="nav-item">
-						<button type="button" class="btn btn-outline-danger" id="clear">CLEAR ARTICLES!</button>
+						<button type="button" id="clear" class="btn btn-outline-danger">CLEAR</button>
 					</li>
 				</ul>
 			</div>
@@ -44,14 +42,10 @@
 
 	<div class="jumbotron text-right background-image"></div>
 
-	<div class="wrapper">
 		{{{body}}}
-	</div>
 
-	<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
 		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
 		crossorigin="anonymous"></script>
@@ -59,7 +53,7 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 	<script src="app.js"></script>
-
-</body>
-
-</html>
+	
+	</body>
+	
+	</html>

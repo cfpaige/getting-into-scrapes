@@ -11,12 +11,6 @@ const ArticleSchema = new Schema({
     type: String,
     required: true
   },
-  // count: {
-  //   type: Number,
-  //   required: true,
-  //   default: 0,
-  //   unique: false
-  // },
   isSaved: {
     type: Boolean,
     default: false,
@@ -24,10 +18,8 @@ const ArticleSchema = new Schema({
     unique: false
   },
   note: {
-    type: [{
-      type: Schema.Types.ObjectId,
-      ref: "Note"
-    }],
+    type: Schema.Types.ObjectId,
+    ref: "Note"
   }
 });
 

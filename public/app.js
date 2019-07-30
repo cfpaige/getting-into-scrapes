@@ -8,29 +8,43 @@ $(document).ready(function () {
           location.reload();
       })
   });
+
+  $(document).on("click", "#scrape", function (){
+    $.ajax(`/scrape`, {
+        methos: "GET"
+    }).then(function () {
+        location.reload()
+    });
+});
+
+
   
-  $(".note-btn").click(function (event) {
-      event.preventDefault();
-      const id = $(this).attr("data");
-      $("#article-id").text(id);
-      $("#save-note").attr("data", id);
-      $.ajax(`/articles/${id}`, {
-          type: "GET"
-      }).then(function (data) {
-          console.log(data)
-          $(".articles-available").empty();
-          if (data[0].note.length > 0){
-              data[0].note.forEach(v => {
-                  $(".articles-available").append($(`<li class="list-group-item">${v.text}<button type="button" class="btn btn-danger btn-sm float-right btn-deletenote" data="${v._id}">X</button></li>`));
-              })
-          }
-          else {
-              $(".articles-available").append($(`<li class="list-group-item">No notes for this article yet</li>`));
-              console.log("Second ran!")
-          }
-      })
-      $("#note-modal").modal("toggle");
-  });
+    $(".note-btn").click(function (event) {
+        event.preventDefault();
+        const id = $(this).attr("data");
+        $("#article-id").text(id);
+        $("#save-note").attr("data", id);
+        $.ajax({
+            method:"GET",
+            url: `/articles/${id}`
+        })
+        // $.ajax(`/articles/${id}`, {
+        //     type: "GET"
+        .then(function (data) {
+            console.log(data)
+            $(".articles-available").empty();
+            if (data[0].note.length > 0) {
+                data[0].note.forEach(v => {
+                    $(".articles-available").append($(`<li class="list-group-item">${v.text}<button type="button" class="btn btn-danger btn-sm float-right btn-deletenote" data="${v._id}">X</button></li>`));
+                })
+            }
+            else {
+                $(".articles-available").append($(`<li class="list-group-item">No notes for this article yet</li>`));
+                console.log("No dice! (But it worked.)")
+            }
+        })
+        $("#note-modal").modal("toggle");
+    });
 
   $(document).on("click", ".btn-deletenote", function (){
           event.preventDefault();

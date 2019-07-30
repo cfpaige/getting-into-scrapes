@@ -25,7 +25,7 @@ router.get("/scrape", function (req, res) {
                 })
             });
             //Why won't it redirect or only loads one article?
-            res.redirect("/");
+            res.send("Scrape worked!")
         })
 });
 
